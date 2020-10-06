@@ -1,0 +1,39 @@
+ion-slide {
+    height: 100vh;
+    flex-direction: column;
+}
+
+ion-img {
+    max-width: 30vw;
+    max-height: 30vh;
+    overflow: hidden;
+}
+
+.text-tutorial {
+    color: white;
+}
+
+
+.step-one {
+    background: var(--ion-color-warning);
+    color: var(--ion-color-warning-contrast);
+}
+
+.step-two {
+    background: var(--ion-color-tertiary);
+    color: var(--ion-color-tertiary-contrast);
+}
+
+.step-three {
+    background: var(--ion-color-success);
+    color: var(--ion-color-success-contrast);
+}
+
+.step-four {
+    background: var(--ion-color-dark);
+    color: var(--ion-color-dark-contrast);
+}
+
+ion-button {
+    color: black;
+}

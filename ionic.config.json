@@ -1,0 +1,7 @@
+{
+  "name": "br.com.cssdigital.geracaoj",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

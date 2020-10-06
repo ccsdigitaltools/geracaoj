@@ -1,0 +1,19 @@
+<ion-header style="background: #002a3e; color: white">
+  <ion-buttons slot="start" style="height: 70px; margin-top: 30px;">
+    <ion-back-button></ion-back-button>
+    <ion-title>{{ evento.data  | date:"dd 'de' MMMM 'de' yyyy" }}</ion-title>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-img src="{{ evento.foto }}"></ion-img>
+  <div padding>
+    <h5 class="gsm">{{ evento.tema }}</h5>
+    <h2 class="b">{{ evento.nome }}</h2>
+    <p class="gsm">{{ evento.data  | date:"EEEE',' dd 'de' MMMM 'de' yyyy 'às' HH:mm" }}</p>
+    <p class="gsm">{{ evento.endereco }}</p>
+    <p align=justify class="rl">{{ evento.descricao }}</p>
+  </div>
+</ion-content>
+              
+  

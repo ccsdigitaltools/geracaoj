@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "174303817539",
+    "firebase_url": "https://geracao-jesus.firebaseio.com",
+    "project_id": "geracao-jesus",
+    "storage_bucket": "geracao-jesus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174303817539:android:c48a7882065567501c09f6",
+        "android_client_info": {
+          "package_name": "br.com.ccsdigitaltools.geracaojesus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174303817539-4na0okcq5j2eq35g034d09mls3nhisrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw75LqYv_P_s0BDYT18X3URVwPc0_fKRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174303817539-4na0okcq5j2eq35g034d09mls3nhisrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

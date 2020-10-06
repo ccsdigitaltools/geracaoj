@@ -1,0 +1,18 @@
+<ion-header style="background: #002a3e; color: white">
+  <ion-buttons slot="start" style="height: 70px; margin-top: 30px;">
+    <ion-back-button></ion-back-button>
+    <ion-title>{{ noticia.tipo }}</ion-title>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-img src="{{ noticia.foto }}"></ion-img>
+  <div padding>
+    <h5 class="gsm">{{ noticia.tipo }}</h5>
+    <h2 class="b">{{ noticia.titulo }}</h2>
+    <p class="gsm">{{ noticia.autor }}</p>
+    <p align=justify class="rl">{{ noticia.descricao }}</p>
+  </div>
+</ion-content>
+                  
+      

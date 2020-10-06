@@ -1,0 +1,55 @@
+<ion-header style="background: #002a3e; color: white">
+  <ion-buttons slot="start" style="height: 70px; margin-top: 30px;">
+    <ion-back-button></ion-back-button>
+    <ion-title>Novo Evento</ion-title>
+    <ion-icon name="md-checkmark" slot="end" color="light"  style="font-size: 20px; margin-right: 4%; margin-top: 2%;" (click)="salvar()"></ion-icon>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Destaque</ion-label>
+        <ion-icon name="ios-medal" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-select style="margin-left: 30px;" cancelText="Cancelar" okText="Ok" [(ngModel)]="evento.destaque">
+        <ion-select-option value="true">Colocar no Home</ion-select-option>
+        <ion-select-option value="false">Não colocar no Home</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Foto (http://)</ion-label>
+      <ion-icon name="ios-images" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-input style="margin-left: 30px;" [(ngModel)]="evento.foto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Data & Hora</ion-label>
+      <ion-icon name="md-calendar" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-datetime [min]="dataY" [max]="dataX" style="margin-left: 30px;" displayFormat="DDD, MMM YYYY - HH:mm" 
+      monthShortNames="jan, feb, mar, abr, mai, jun, jul, aug, set, out, nov, dez" 
+      cancelText="Cancelar" doneText="OK" 
+      dayShortNames="Dom, Seg, Ter, Qua, Qui, Sex, Sab" [(ngModel)]="evento.data"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Nome</ion-label>
+      <ion-icon name="ios-code-working" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-input style="margin-left: 30px;" [(ngModel)]="evento.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Tema</ion-label>
+      <ion-icon name="ios-code-working" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-input style="margin-left: 30px;" [(ngModel)]="evento.tema"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Endereço</ion-label>
+      <ion-icon name="md-globe" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-input style="margin-left: 30px;" [(ngModel)]="evento.endereco"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="margin-left: 30px;"position="floating">Descrição</ion-label>
+      <ion-icon name="ios-code-working" style="position: absolute; bottom: 14px;"></ion-icon>
+      <ion-textarea style="margin-left: 30px;" [(ngModel)]="evento.descricao"></ion-textarea>
+    </ion-item>
+    <br>
+    <p class="ion-text-center rl" style="color: gray;">
+      Todos eventos cadastrado estão sujeitos a aprovação dos administradores do app.
+    </p>
+</ion-content>

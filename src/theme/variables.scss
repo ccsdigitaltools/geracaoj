@@ -1,0 +1,242 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+  /** primary **/
+  --ion-color-primary: #fca903 !important;
+  --ion-color-primary-rgb: 255, 206, 0;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #fca903 !important;
+  --ion-color-primary-tint: #fca903 !important;
+
+  /** secondary **/
+  --ion-color-secondary: #0cd1e8;
+  --ion-color-secondary-rgb: 12, 209, 232;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #0bb8cc;
+  --ion-color-secondary-tint: #24d6ea;
+
+  /** tertiary **/
+  --ion-color-tertiary: #7044ff;
+  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #633ce0;
+  --ion-color-tertiary-tint: #7e57ff;
+
+  /** success **/
+  --ion-color-success: #10dc60;
+  --ion-color-success-rgb: 16, 220, 96;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #0ec254;
+  --ion-color-success-tint: #28e070;
+
+  /** warning **/
+  --ion-color-warning: #fca903 !important;//#ffce00;
+  --ion-color-warning-rgb: 255, 206, 0;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #fca903;//#e0b500;
+  --ion-color-warning-tint: #fca903;//#ffd31a;
+
+  /** danger **/
+  --ion-color-danger: #f04141;
+  --ion-color-danger-rgb: 245, 61, 61;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d33939;
+  --ion-color-danger-tint: #f25454;
+
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 34, 34;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  /** light **/
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+
+  /** custom **/
+  --ion-color-custom: #fca903;
+  --ion-color-custom-rgb: 255, 206, 0;
+  --ion-color-custom-contrast: #ffffff;
+  --ion-color-custom-contrast-rgb: 255, 255, 255;
+  --ion-color-custom-shade: #fca903;
+  --ion-color-custom-tint: #fca903;
+
+ 
+  --ion-tab-bar-background: #002a3e  !important;
+  --ion-tab-bar-color: #fff;
+  --ion-toolbar-background: #002a3e  !important;
+  --ion-toolbar-color: #fff  !important;
+
+
+}
+
+ion-input  {
+  width: 80% !important;
+}
+
+
+.fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  z-index: 0;
+  width: 100%;
+  background-color: #002a3e;
+}
+
+
+.logoTitulo {
+  color: white;
+  font-size: 30px;
+}
+
+.titulo {
+  color: #FFBF00;
+}
+
+.tituloEvento, h2 {
+  color: #002a3e;
+  /*font-size: 10px;*/
+}
+
+.tituloEventoBW {
+  color: #989aa2;
+  /*font-size: 10px;*/
+}
+
+.subTitulo {
+  color: white;
+  font-size: 20px;
+}
+
+ion-content, ion-refresher {
+  --ion-background-color:rgb(255, 255, 255);
+}
+
+ion-card.md, ion-card.ios {
+
+  border-radius: 10px;
+  /*box-shadow: 0 5px 9px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+  .imgDestaque {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+
+ion-card-content, ion-card-header, ion-card.md {
+  background-color:#ffffff;
+}
+
+ion-badge {
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 100%;
+}
+
+ion-title, .b {
+  font-family: 'Google Sans Bold' !important;
+}
+
+ion-text, p {
+  font-family: 'Roboto Regular' !important;
+}
+
+ion-card-subtitle {
+  font-family: 'Roboto Medium' !important;
+}
+
+.rl {
+  font-family: 'Roboto Light' !important;
+}
+
+.gsm {
+  font-family: 'Google Sans Medium' !important;
+}
+
+.hideTabs {
+  display: none;
+}
+
+.showTabs {
+  display: flex;
+}
+
+/*.imgBlackWhite {
+  display: block;
+  //max-width: 300px;
+  //margin: 20px auto 40px auto;
+  transition: .3s;
+  
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+
+.imgBlackWhite:hover {
+  -webkit-filter: none;	
+  filter: none;	
+}*/
+
+
+.msg-null {
+  height: 100vh;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #002a3e;
+  /*animation: pulse 1s linear forwards;*/
+}
+
+.msg-null-img {
+  max-width: 30vw;
+  max-height: 30vh;
+  overflow: hidden;
+}
+
+.loading {
+  height: 40px;
+  position: absolute;
+  bottom: 50px;
+}
+
+.splash-text {
+  color: #002a3e;
+}

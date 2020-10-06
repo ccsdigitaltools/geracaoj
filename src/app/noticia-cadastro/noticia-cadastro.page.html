@@ -1,0 +1,52 @@
+<ion-header style="background: #002a3e; color: white">
+    <ion-buttons slot="start" style="height: 70px; margin-top: 30px;">
+      <ion-back-button></ion-back-button>
+      <ion-title>Nova Notícia</ion-title>
+      <ion-icon name="md-checkmark" slot="end" color="light"  style="font-size: 20px; margin-right: 4%; margin-top: 2%;" (click)="salvar()"></ion-icon>
+    </ion-buttons>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+      <ion-item>
+          <ion-label style="margin-left: 30px;"position="floating">Tipo</ion-label>
+          <ion-icon name="ios-medal" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-select style="margin-left: 30px;" cancelText="Cancelar" okText="Ok" [(ngModel)]="noticia.tipo">
+          <ion-select-option value="Lançamento">Lançamento</ion-select-option>
+          <ion-select-option value="Notícias">Notícias</ion-select-option>
+          <ion-select-option value="Best-Saller">Best-Saller</ion-select-option>
+      </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Foto (http://)</ion-label>
+        <ion-icon name="ios-images" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-input style="margin-left: 30px;" [(ngModel)]="noticia.foto"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Titulo</ion-label>
+        <ion-icon name="ios-code-working" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-input style="margin-left: 30px;" [(ngModel)]="noticia.titulo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Autor</ion-label>
+        <ion-icon name="ios-contact" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-input style="margin-left: 30px;" [(ngModel)]="noticia.autor"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Vencimento</ion-label>
+        <ion-icon name="md-calendar" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-datetime [min]="dataY" [max]="dataX" style="margin-left: 30px;" displayFormat="DDD, MMM YYYY - HH:mm" 
+        monthShortNames="jan, feb, mar, abr, mai, jun, jul, aug, set, out, nov, dez" 
+        cancelText="Cancelar" doneText="OK" 
+        dayShortNames="Dom, Seg, Ter, Qua, Qui, Sex, Sab" [(ngModel)]="noticia.vencimento"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label style="margin-left: 30px;"position="floating">Descrição</ion-label>
+        <ion-icon name="ios-code-working" style="position: absolute; bottom: 14px;"></ion-icon>
+        <ion-textarea style="margin-left: 30px;" [(ngModel)]="noticia.descricao"></ion-textarea>
+      </ion-item>
+      <br>
+      <p class="ion-text-center rl" style="color: gray;">
+        Todas notícias cadastradas estão sujeitas a aprovação dos administradores do app.
+      </p>
+  </ion-content>
+  

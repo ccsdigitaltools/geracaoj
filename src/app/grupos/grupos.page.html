@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="fundo">
+    <ion-list-header style="margin-top: 30px">
+      <h3><ion-text class="logoTitulo b">#</ion-text><ion-text class="titulo b">GeraçãoJesus</ion-text></h3>
+    </ion-list-header>
+  
+    <ng-template *ngIf="grupoOpt===true; then showGrupos; else notGrupos"></ng-template>
+    
+    <ng-template #showGrupos>
+      <ion-list-header style="margin-top: 10px" class="animated fadeIn delay-1s">
+        <ion-label class="subTitulo b" style="font-size: 20px">Grupos & Bandas</ion-label>
+        <ion-icon name="add-circle-outline" color="light"  style="font-size: 20px; margin-right: 4%; margin-top: 3%;" button [routerLink]="['/grupo-cadastro']"></ion-icon>
+      </ion-list-header>
+      <ion-card class="animated fadeInUp" *ngFor="let grupo of grupos" button [routerLink]="['/grupo-detalhes', grupo.id]">
+        <img class="imgDestaque" src="{{ grupo.foto ? grupo.foto : '../../../../assets/card/null-grupos.png' }}" alt="" />
+          <ion-card-header>
+            <ion-card-subtitle>{{ grupo.tipo ? grupo.tipo : '-' }}</ion-card-subtitle>
+            <ion-label>
+              <ion-text>
+                <ion-card-title class="tituloEvento b">{{ grupo.nome ? grupo.nome : '-' }}</ion-card-title>
+              </ion-text>
+              <p style="font-size:100%">{{ grupo.genero ? grupo.genero : '-' }}</p>
+            </ion-label>
+          </ion-card-header>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #notGrupos>
+      <div class="msg-null">
+          <ion-img class="msg-null-img logo animated swing infinite slow" src="../../../../assets/tutorial/band.png"></ion-img>
+          <h2 class="ion-text-center b">Em breve <br>novos grupos e bandas</h2>
+          <p class="ion-text-center rl">Grupos & Bandas</p>
+          <ion-button button [routerLink]="['/grupo-cadastro']">
+            Novo
+            <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+          </ion-button>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>
+          

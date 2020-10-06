@@ -1,0 +1,21 @@
+<ion-header style="background: #002a3e; color: white">
+  <ion-buttons slot="start" style="height: 70px; margin-top: 30px;">
+    <ion-back-button></ion-back-button>
+    <ion-title>{{ grupo.nome }}</ion-title>
+  </ion-buttons>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-img src="{{ grupo.foto }}"></ion-img>
+  <div padding>
+    <h5 class="b">{{ grupo.tipo }}</h5>
+    <h2 class="b">{{ grupo.nome }}</h2>
+    <h5 class="gsm">{{ grupo.genero }}</h5>
+    <p class="rl">{{ grupo.integrantes }}</p>
+    <p class="gsm">{{ grupo.localidade+'/'+grupo.uf }}</p>
+    <p align=justify class="rl">{{ grupo.descricao }}</p>
+    <div id="play"></div>
+  </div>
+</ion-content>
+                
+    

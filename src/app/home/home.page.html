@@ -1,0 +1,155 @@
+<ion-content>
+  <div class="fundo">
+    <ion-list-header style="margin-top: 30px">
+      <h3><ion-text class="logoTitulo b">#</ion-text><ion-text class="titulo b">GeraçãoJesus</ion-text></h3>
+    </ion-list-header>
+
+    <ng-template *ngIf="eventoOpt===true; then showEventos; else notEventos"></ng-template>
+    
+    <ng-template #showEventos>
+      <ion-list-header style="margin-top: 10px" class="animated fadeIn delay-1s">
+        <ion-label class="subTitulo b">
+          <ion-icon slot="icon-only" name="ios-calendar" style="font-size: 20px; margin-top: 10%;"></ion-icon>
+          Eventos
+        </ion-label>
+      </ion-list-header>
+
+      <ion-slides class="animated fadeInUp" [options]="sliderConfigEventos" >
+        <ion-slide *ngFor="let evento of eventos">
+          <ion-card button [routerLink]="['/evento-detalhes', evento.id]">
+            <img class="imgDestaque" src="{{ evento.foto ? evento.foto : '../../../../assets/card/null-eventos.png'}}" alt="" />
+              <ion-card-header>
+                <ion-card-subtitle>Próximo Evento</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ evento.nome ? evento.nome : '-' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ evento.data ? (evento.data | date:"EEEE',' dd 'de' MMMM 'de' yyyy 'às' HH:mm") : '-' }}</p>
+                </ion-label>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+
+    <ng-template #notEventos>
+      <ion-list-header style="margin-top: 10px" class="animated fadeIn delay-1s">
+        <ion-label class="subTitulo b" style="font-size: 20px" ><ion-icon style="padding-top: 10px;" slot="start" name="ios-calendar"></ion-icon> Eventos</ion-label>
+      </ion-list-header>
+
+      <ion-slides class="animated fadeInUp imgBlackWhite">
+        <ion-slide>      
+          <ion-card>
+            <img class="imgDestaque" src="../../../../assets/card/null-eventos.png" alt="" />
+              <ion-card-header>
+                <ion-card-subtitle>Em Breve</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ 'Novos Eventos' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ 'Eventos' }}</p>
+                </ion-label>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+
+    <ng-template *ngIf="noticiaOpt===true; then showNoticias; else notNoticias"></ng-template>
+
+    <ng-template #showNoticias>
+      <ion-list-header class="animated fadeIn delay-1s">
+        <ion-label class="b" style="font-size: 20px"><ion-icon slot="start" name="ios-paper"></ion-icon> Notícias</ion-label>
+      </ion-list-header>
+
+      <ion-slides class="animated fadeInUp" [options]="sliderConfigNoticias" >
+        <ion-slide *ngFor="let noticia of noticias">
+          <ion-card button [routerLink]="['/noticia-detalhes', noticia.id]">
+            <img class="imgDestaque" src="{{ noticia.foto ? noticia.foto : '../../../../assets/card/null-noticias.png'}}" alt="" />
+              <ion-card-header>
+                <ion-card-subtitle>{{ noticia.tipo }}</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ noticia.titulo ? noticia.titulo : '-' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ noticia.autor ? noticia.autor : '-'}}</p>
+                </ion-label>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+
+    <ng-template #notNoticias>
+      <ion-list-header class="animated fadeIn delay-1s">
+        <ion-label class="b" style="font-size: 20px"><ion-icon slot="start" name="ios-paper"></ion-icon> Notícias</ion-label>
+      </ion-list-header>
+
+      <ion-slides class="animated fadeInUp imgBlackWhite">
+        <ion-slide>      
+          <ion-card>
+            <img class="imgDestaque" src="../../../../assets/card/null-noticias.png" alt="" />
+              <ion-card-header>
+                <ion-card-subtitle>Em Breve</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ 'Novas Notícias' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ 'Notícias' }}</p>
+                </ion-label>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+
+    <ng-template *ngIf="promoOpt===true; then showPromos; else notPromos"></ng-template>
+
+    <ng-template #showPromos>
+      <ion-list-header class="animated fadeIn delay-1s">
+        <ion-label class="b" style="font-size: 20px"><ion-icon slot="start" name="ios-trophy"></ion-icon> Promoções & Sorteios</ion-label>
+      </ion-list-header>      
+
+      <ion-slides class="animated fadeInUp" [options]="sliderConfigPromos" >
+        <ion-slide *ngFor="let promo of promos">
+          <ion-card button [routerLink]="['/promo-detalhes', promo.id]">
+            <img class="imgDestaque" src="{{ promo.foto ? promo.foto : '../../../../assets/card/null-promos.png'}}" alt="" />
+            <ion-card-header>
+              <ion-card-subtitle>Promoções & Sorteios</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ promo.nome ? promo.nome : '-' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ promo.data ? (promo.data | date:"EEEE',' dd 'de' MMMM 'de' yyyy 'às' HH:mm") : '-' }}</p>
+                </ion-label>
+            </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+
+    <ng-template #notPromos>
+      <ion-list-header class="animated fadeIn delay-1s">
+        <ion-label class="b" style="font-size: 20px"><ion-icon slot="start" name="ios-trophy"></ion-icon> Promoções & Sorteios</ion-label>
+      </ion-list-header>
+
+      <ion-slides class="animated fadeInUp imgBlackWhite">
+        <ion-slide>      
+          <ion-card>
+            <img class="imgDestaque" src="../../../../assets/card/null-promos.png" alt="" />
+              <ion-card-header>
+                <ion-card-subtitle>Em Breve</ion-card-subtitle>
+                <ion-label>
+                  <ion-text>
+                    <ion-card-title class="tituloEvento b">{{ 'Novas Promoções & Sorteios' }}</ion-card-title>
+                  </ion-text>
+                  <p style="font-size:100%">{{ 'Promoções & Sorteios' }}</p>
+                </ion-label>
+              </ion-card-header>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ng-template>
+  </div>
+</ion-content>
+    

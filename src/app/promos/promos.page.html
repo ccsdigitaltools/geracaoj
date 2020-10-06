@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="fundo">
+    <ion-list-header style="margin-top: 30px">
+      <h3><ion-text class="logoTitulo b">#</ion-text><ion-text class="titulo b">GeraçãoJesus</ion-text></h3>
+    </ion-list-header>
+  
+    <ng-template *ngIf="promoOpt===true; then showPromos; else notPromos"></ng-template>
+
+    <ng-template #showPromos>
+      <ion-list-header style="margin-top: 10px" class="animated fadeIn delay-1s">
+        <ion-label class="subTitulo b" style="font-size: 20px">Promoções & Sorteios</ion-label>
+        <ion-icon name="add-circle-outline" color="light"  style="font-size: 20px; margin-right: 4%; margin-top: 3%;" button [routerLink]="['/promo-cadastro']"></ion-icon>
+      </ion-list-header>      
+      <ion-card class="animated fadeInUp" *ngFor="let promo of promos" button [routerLink]="['/promo-detalhes', promo.id]">
+        <img class="imgDestaque" src="{{ promo.foto ? promo.foto : '../../../../assets/card/null-promos.png'}}" alt="" />
+        <ion-card-header>
+          <ion-card-subtitle>Promoções & Sorteios</ion-card-subtitle>
+            <ion-label>
+              <ion-text>
+                <ion-card-title class="tituloEvento b">{{ promo.nome ? promo.nome : '-' }}</ion-card-title>
+              </ion-text>
+              <p style="font-size:100%">{{ promo.data ? (promo.data | date:"EEEE',' dd 'de' MMMM 'de' yyyy 'às' HH:mm") : '-' }}</p>
+            </ion-label>
+        </ion-card-header>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #notPromos>
+      <div class="msg-null">
+          <ion-img class="msg-null-img logo animated swing infinite slow" src="../../../../assets/tutorial/winner.png"></ion-img>
+          <h2 class="ion-text-center b">Em breve <br>novas promoções</h2>
+          <p class="ion-text-center rl">Promoções & Sorteios</p>
+          <ion-button button [routerLink]="['/promo-cadastro']">
+            Novo
+            <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+          </ion-button>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>
+          

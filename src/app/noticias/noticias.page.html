@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="fundo">
+    <ion-list-header style="margin-top: 30px">
+      <h3><ion-text class="logoTitulo b">#</ion-text><ion-text class="titulo b">GeraçãoJesus</ion-text></h3>
+    </ion-list-header>
+  
+    <ng-template *ngIf="noticiaOpt===true; then showNoticias; else notNoticias"></ng-template>
+
+    <ng-template #showNoticias>
+      <ion-list-header style="margin-top: 10px" class="animated fadeIn delay-1s">
+        <ion-label class="subTitulo b" style="font-size: 20px">Notícias</ion-label>
+        <ion-icon name="add-circle-outline" color="light"  style="font-size: 20px; margin-right: 4%; margin-top: 3%;" button [routerLink]="['/noticia-cadastro']"></ion-icon>
+      </ion-list-header>
+      <ion-card class="animated fadeInUp" *ngFor="let noticia of noticias" button [routerLink]="['/noticia-detalhes', noticia.id]">
+        <img class="imgDestaque" src="{{ noticia.foto ? noticia.foto : '../../../../assets/card/null-noticias.png'}}" alt="" />
+          <ion-card-header>
+            <ion-card-subtitle>{{ noticia.tipo }}</ion-card-subtitle>
+            <ion-label>
+              <ion-text>
+                <ion-card-title class="tituloEvento b">{{ noticia.titulo ? noticia.titulo : '-' }}</ion-card-title>
+              </ion-text>
+              <p style="font-size:100%">{{ noticia.autor ? noticia.autor : '-'}}</p>
+            </ion-label>
+          </ion-card-header>
+      </ion-card>
+    </ng-template>
+
+    <ng-template #notNoticias>
+      <div class="msg-null">
+          <ion-img class="msg-null-img logo animated swing infinite slow" src="../../../../assets/tutorial/news.png"></ion-img>
+          <h2 class="ion-text-center b">Em breve <br>novas notícias</h2>
+          <p class="ion-text-center rl">Notícias</p>
+          <ion-button button [routerLink]="['/noticia-cadastro']">
+            Novo
+            <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+          </ion-button>
+      </div>
+    </ng-template>
+  </div>
+</ion-content>
+          
